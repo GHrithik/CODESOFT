@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopKart E-commerce</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" id="shopkartLogo">🛒 ShopKart</a>
+                <div class="search-bar">
+                    <input type="search" placeholder="Search for products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-icons">
+                    <a href="/wishlist" class="icon-link">
+                        <i class="far fa-heart"></i>
+                        <span class="icon-badge" id="wishlist-count">0</span>
+                    </a>
+                    <a href="/cart" class="icon-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="icon-badge" id="cart-count">0</span>
+                    </a>
+                    <div class="account-link">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Ritik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="category-nav">
+        <div class="container">
+            <a href="/grocery" class="category-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                    </path>
+                </svg>
+                <span>Grocery</span>
+            </a>
+            <a href="/mobiles" class="category-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                <span>Mobiles</span>
+            </a>
+            <a href="/fashion" class="category-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z">
+                    </path>
+                </svg>
+                <span>Fashion</span>
+            </a>
+            <a href="/electronics" class="category-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <span>Electronics</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- New Banner Section -->
+    <section class="banner-section">
+        <div class="banner-container">
+            <div class="banner-wrapper" id="bannerWrapper">
+                <a href="/product/google-pixel-8-pro" class="banner-slide">
+                    <img src="./bannerImg/banner1.png"
+                        alt="Google Pixel 8 Pro">
+                </a>
+                <a href="/product/iphone-15" class="banner-slide">
+                    <img src="./bannerImg/banner2.png"
+                        alt="iPhone 15">
+                </a>
+                <a href="/product/zebronics-monitor" class="banner-slide">
+                    <img src="./bannerImg/banner3.png"
+                        alt="Zebronics Monitor">
+                </a>
+            </div>
+            <button class="banner-nav prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="banner-nav next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            <div class="banner-dots" id="bannerDots"></div>
+        </div>
+    </section>
+
+    <main>
+        <section id="favorites" class="product-section">
+            <div class="container">
+                <h2>Favorites at a steal!</h2>
+                <p>Inspired by Your Interest</p>
+                <div class="product-grid" id="favorites-grid"></div>
+            </div>
+        </section>
+
+        <section id="handpicked" class="product-section">
+            <div class="container">
+                <h2>Handpicked for you</h2>
+                <p>Similar to Items You Viewed</p>
+                <div class="product-grid" id="handpicked-grid"></div>
+            </div>
+        </section>
+        
+        <section id="discounts" class="product-section">
+            <div class="container">
+                <h2>Discounts just for you!</h2>
+                <p>Time for an upgrade!</p>
+                <div class="product-grid" id="discounts-grid"></div>
+            </div>
+        </section>
+        
+        <section id="smartphones" class="product-section">
+            <div class="container">
+                <h2>Top Selling Smartphones</h2>
+                <p>Latest Technology, Best Brands</p>
+                <div class="product-grid" id="smartphones-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>ShopKart is your ultimate destination for the latest trends and styles. We bring you the best products
+                        from around the world.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Trending Now</a></li>
+                        <li><a href="#">Sale Items</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopKart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
